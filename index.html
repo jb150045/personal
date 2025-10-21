@@ -2,16 +2,121 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>我的網站首頁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人網站 — 關於我 / Security</title>
+  <style>
+    :root{--accent:#1a73e8;--maxw:1000px}
+    *{box-sizing:border-box}
+    body{font-family:"Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif; margin:0; background:#f5f7fb; color:#222}
+    .container{max-width:var(--maxw); margin:32px auto; padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    h1{margin:.2rem 0}
+    nav{font-size:0.95rem}
+    nav a{color:var(--accent); text-decoration:none; margin:0 8px}
+    nav a:hover{text-decoration:underline}
+    main{margin-top:18px}
+    .card{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 6px 18px rgba(20,30,60,0.06)}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:860px){.grid{grid-template-columns:2fr 1fr}}
+    ul{padding:0;margin:0;list-style:none}
+    li{margin:8px 0}
+    a.pdf{color:var(--accent); text-decoration:none}
+    footer{font-size:0.85rem;color:#666;text-align:center;margin-top:18px}
+    .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef5ff;color:var(--accent);font-weight:600;margin-left:8px}
+    .section-title{display:flex;align-items:center;justify-content:space-between}
+  </style>
 </head>
 <body>
-  <h1>歡迎來到我的網站！</h1>
-  <nav>
-    <a href="index.html">首頁</a> |
-    <a href="about.html">關於我</a> |
-    <a href="security.html">資安類作品</a> |
-    <a href="ai.html">AI類作品</a>
-  </nav>
-  <p>這裡可以放你的簡介或連結。</p>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Charles Youngman</h1>
+        <div style="color:#666;font-size:0.95rem">個人網站｜關於我 &amp; Security — CTF 與滲透測試</div>
+      </div>
+      <nav>
+        <a href="#home">首頁</a> |
+        <a href="#about">關於我</a> |
+        <a href="#security">Security</a> |
+        <a href="#contact">聯絡我</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="card">
+        <h2>首頁</h2>
+        <p>歡迎來到我的個人網站。這個單頁範例將「關於我」與「CTF 與滲透測試報告」合併，方便瀏覽與部署到 GitHub Pages。你可以從上方選單快速跳轉至每個區塊。</p>
+      </section>
+
+      <div class="grid">
+        <section id="about" class="card">
+          <div class="section-title">
+            <h2>關於我</h2>
+            <span class="badge">Student</span>
+          </div>
+          <p>你好！我是 Charles Youngman，目前就讀於宜蘭大學，主修資訊工程。</p>
+          <p>我對資訊安全、機器學習與網站開發特別感興趣。曾完成的專案範例包括姿勢矯正系統、CTF writeups 以及圖像分類模型等。</p>
+
+          <h3>技能</h3>
+          <ul>
+            <li>語言：Python、Java、HTML/CSS/JS</li>
+            <li>工具：Git、Docker、Keras、Metasploit</li>
+            <li>興趣：CTF、滲透測試、嵌入式開發（Arduino）</li>
+          </ul>
+        </section>
+
+        <aside class="card">
+          <h3>快速連結</h3>
+          <ul>
+            <li><a href="#security">CTF 與滲透報告</a></li>
+            <li><a href="#contact">聯絡我</a></li>
+            <li><a href="/" class="pdf">下載履歷（範例）</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <section id="security" class="card">
+        <h2>Security — CTF 與滲透測試報告</h2>
+        <p>此處存放 CTF writeups 與滲透測試報告（PDF）。請確認你已將對應 PDF 檔案上傳到 repository 的 <code>security/</code> 資料夾中，連結才會正常運作。</p>
+
+        <h3>CTF</h3>
+        <ul>
+          <li><a class="pdf" href="security/CTF1.pdf" target="_blank" rel="noopener">Empire:Breakout（CTF1）</a></li>
+          <li><a class="pdf" href="security/CTF2.pdf" target="_blank" rel="noopener">Empire:LupinOne（CTF2）</a></li>
+        </ul>
+
+        <h3>滲透測試報告</h3>
+        <ul>
+          <li><a class="pdf" href="security/metasploitable2.pdf" target="_blank" rel="noopener">滲透測試報告（Metasploitable2）</a></li>
+        </ul>
+
+        <p style="color:#666;font-size:0.95rem">提示：若要讓 PDF 在 GitHub Pages 正常顯示，請確保檔案放在 repo 的同一路徑（例如 <code>security/CTF1.pdf</code>），並在 push 後等候 Pages 建置完成。</p>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>聯絡我</h2>
+        <p>若想交流專案或邀稿，歡迎透過以下方式聯絡：</p>
+        <ul>
+          <li>Email: <a href="mailto:example@example.com">example@example.com</a></li>
+          <li>GitHub: <a href="https://github.com/yourname" target="_blank" rel="noopener">github.com/yourname</a></li>
+        </ul>
+      </section>
+
+      <footer>
+        <div>© Charles Youngman — 建議上傳至 GitHub Pages 並保持檔案結構一致。</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // 加入平滑捲動（支援大部分現代瀏覽器）
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  </script>
 </body>
 </html>
